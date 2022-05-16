@@ -1,0 +1,26 @@
+ventas = {
+Enero: 15000,
+Febrero: 22000,
+Marzo: 12000,
+Abril: 17000,
+Mayo: 81000,
+Junio: 13000,
+Julio: 21000,
+Agosto: 41200,
+Septiembre: 25000,
+Octubre: 21500,
+Noviembre: 91000,
+Diciembre: 21000
+}
+def filter(parameter,hash)
+    new_hash = {}
+    hash.each do |k,v|
+        if v > parameter.to_i
+            new_hash[k] = v
+        end
+    end
+    new_hash
+end 
+parameter = ARGV[0]
+hash = ventas
+puts filter(parameter,hash)

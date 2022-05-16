@@ -14,12 +14,12 @@ usuariosG = gets.to_i
 puts "Ingrese los Gastos"
 gastos = gets.to_f
 
-#utilidades de usuarios Premium
+#ingresos de usuarios Premium
 ingresosP = (precio_venta*usuariosP)*2
-#utilidades de usuarios Normales
+#ingresos de usuarios Normales
 usuariosE = usuariosT-(usuariosP+usuariosG)
 ingresosE = (precio_venta*usuariosE)
-#utilidades de usuarios Free que no se recibio
+#ingresos de usuarios Free que no se recibio
 ingresosG = (precio_venta*usuariosG)
 #Suma de todos los ingresos
 ingresosT = ingresosP+ingresosE
