@@ -12,15 +12,16 @@ def build_web_page(contenido)
     photos = contenido["photos"]
     html =
     "<html>\n
-    \t<title>Nasa<title>\n
-    \t<head>\n
-    \t</head>\n
-    \t<body>\n
-    \t\t<ul>\n"
-    photos.map {|x| html += "\t\t\t<li><img src=#{x["img_src"]} width='200px'></li>\n"}
+    <title>Nasa</title>\n
+    <head>\n
+    </head>\n
+    <body>\n
+    \t<ul>\n"
+    photos.map {|x| html += "\t\t<li><img src=#{x["img_src"]} width='200px'></li>\n \t"}
+
     html +=
     "\t\t</ul>\n
-    \t</body>\n
+    </body>\n
     </html>"
     File.write('NASA_photos.html', html)
 end
