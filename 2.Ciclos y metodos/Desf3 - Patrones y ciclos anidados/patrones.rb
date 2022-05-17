@@ -1,21 +1,15 @@
-=begin
-Escribir un programa llamado patrones.rb con métodos que reciban la cantidad de líneas y
-muestren por pantalla los siguientes patrones de *:   
-=end
+#capta la cantidad de n para los patrones
+n = ARGV[0].to_i
+print "\n\n"
 
-
-# LETRA O
-# n = 5
-# Parte superior
-def techo(cantidad_techo)
-    cantidad_techo.times do |i|
+# Metodo Letra "O"
+def o_top(n_o_top)
+    n_o_top.times do |i|
         print "*"
     end
     print "\n"
 end
-
-# paredes mas espacios vacios
-def medio(n)
+def o_mid(n)
     (n - 2).times do |x|
         print "*"
         (n - 2).times do |i|
@@ -25,54 +19,57 @@ def medio(n)
         print "\n"
     end
 end
-
-# Parte inferior
-def inferior(cantidad_inferior)
-    cantidad_inferior.times do |i|
+def o_bot(n_o_bot)
+    n_o_bot.times do |i|
         print "*"
     end
     print "\n"
 end
-
-def start(cantidad)
-    techo(cantidad)
-    medio(cantidad)
-    inferior(cantidad)
+def letra_o(n)
+    o_top(n)
+    o_mid(n)
+    o_bot(n)
 end
+letra_o(n)
+print "\n\n"
 
-n = ARGV[0].to_i
-start(n)
-
-# LETRA I
-
-def creando_i(n)
-    fin = (n-1)
-    centro = (n/2)
-    n.times do |fila|
-        if fila == 0 || fila == (fin)
-            n.times do |linea|
-                print "*"
+# Metodo Letra I
+def i_top(n_o_top)
+    n_o_top.times do |i|
+        print "*"
+    end
+    print "\n"
+end
+def i_mid(n)
+    (n-2).times do |x|
+        (n - 2).times do |i|
+            print " "  
+            if  i == (n/2-1)
+                print "*"  
             end
-            print"\n"
-        else
-            (n-2).times do |x|
-                if x == (centro)
-                    print "*"
-                else
-                    print " "
-                end
-            end
-            print "\n"
+
         end
+        print "\n"
     end
 end
-n =creando_i(ARGV[0].to_i)
+def i_bot(n_o_bot)
+    n_o_bot.times do |i|
+        print "*"
+    end
+    print "\n"
+end
+def letra_i(n)
+    i_top(n)
+    i_mid(n)
+    i_bot(n)
+end
+letra_i(n)
+print "\n\n"
 
-# LETRA Z
-
-def creando_z(n)
+# Metodo letra Z
+def letra_z(n)
     fin = (n-1)
-    inverso = (n-2)
+    reversa = (n-2)
     n.times do |fila|
         if fila == 0 || fila == (fin)
             n.times do |linea|
@@ -81,22 +78,22 @@ def creando_z(n)
             print "\n"
         else
             n.times do |x|
-                if x == inverso
+                if x == reversa
                     print "*"
                 else
                     print " "
                 end
             end
-            inverso = inverso -1
+            reversa = reversa -1
             print "\n"
         end
     end
 end
-n =creando_z(ARGV[0].to_i)
+letra_z(n)
+print "\n\n"
 
-# LETRA X
-
-def creando_x(n)
+# Metodo Letra X
+def letra_x(n)
     n.times do |i|
         n.times do |j|
             if i == j || (i + j) == (n-1)
@@ -109,12 +106,9 @@ def creando_x(n)
     end
     print "\n"
 end
-n =creando_x(ARGV[0].to_i)    
-
-# Número 0
-
-#e. Método numero_cero(n)
-# Parte superior
+letra_x(n)    
+print "\n\n"
+#Método numero 0
 def numero_0(n_veces)
     n_veces.times do |i|
         n_veces.times do |j|
@@ -127,11 +121,11 @@ def numero_0(n_veces)
         print "\n"
     end
 end
-n =numero_0(ARGV[0].to_i)
+numero_0(n)
+print "\n\n"
 
-# ARBOLITO
-
-def arbolito_copa(n)
+# Arbol
+def arbol_top(n)
     c = "* "
     value = c
     for i in 1..n
@@ -139,8 +133,7 @@ def arbolito_copa(n)
         value += c * (2 - 1)
     end
 end
-
-def arbolito_tronco(n)  
+def arbol_tronco(n)  
     (n - 1).times do |i|
         n.times do |j|
             if j == ((2*n - 1) / 2)
@@ -152,8 +145,7 @@ def arbolito_tronco(n)
         print "\n" 
     end
 end
-
-def arbolito_base(n)
+def arbol_bot(n)
     n = n-1
     print " "
     (n*2).times do |i|
@@ -167,7 +159,9 @@ def arbolito_base(n)
     end
     print "\n" 
 end
-
-n =arbolito_copa(ARGV[0].to_i)  
-n =arbolito_tronco(ARGV[0].to_i)
-n =arbolito_base(ARGV[0].to_i)
+def arbol(n)
+    arbol_top(n)  
+    arbol_tronco(n)
+    arbol_bot(n)
+end
+arbol(n)
