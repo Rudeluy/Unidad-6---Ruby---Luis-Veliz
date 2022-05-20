@@ -17,7 +17,7 @@ def build_web_page(contenido)
     </head>\n
     <body>\n
     \t<ul>\n"
-    photos.map {|x| html += "\t\t<li><img src=#{x["img_src"]} width='200px'></li>\n \t"}
+    photos.map {|x| html += "\t\t<li><img src=#{x['img_src']} width='200px'></li>\n \t"}
 
     html +=
     "\t\t</ul>\n
